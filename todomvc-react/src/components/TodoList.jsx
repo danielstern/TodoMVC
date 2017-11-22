@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 
 const TodoList = ({todos,showDone,toggleTodoDone})=>(
     <ul>
-        {todos.map((todo,i)=>(
+        {todos
+            .filter(todo=>!todo.done || showDone)
+            .map((todo,i)=>(
             <li key={i}>
                 {todo.text}
-                <input type="checkbox" onChange={()=>toggleTodoDone(i)}/>
+                <input type="checkbox" onChange={()=>toggleTodoDone(todo)} checked={todo.done}/>
             </li>
         ))}
     </ul>
@@ -18,8 +20,9 @@ const mapStateToProps = (state)=> ({
 });
 
 const mapDispatchToProps = (dispatch)=>({
-    toggleTodoDone(i){
-        console.info(i);
+    toggleTodoDone(todo){
+        const updated = {...todo,done:!todo.done};
+        dispatch({type:"UPDATE_TODO",todo:updated});
     }
 });
 
