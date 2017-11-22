@@ -1,0 +1,64 @@
+body {
+    font-family: Helvetica, sans-serif, monospace;
+    color: darkslategray;
+    font-size: 1.4em;
+    margin: 1.4em;
+    width: 22em;
+    position: relative;
+}
+input[type=text] {
+    margin-top: 1em;
+    padding: 0.8em;
+    width: 100%;
+    font-size: 0.7em;
+}
+
+input[type=checkbox] {
+    position: absolute;
+    right: 0;
+    padding: 1em;
+
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+    padding: 1em 0 1em 0;
+    border-bottom: 1px solid lightblue;
+    position: relative;
+}
+
+li input {
+    transform: scale(1.8);
+}
+
+ul {
+    padding: 0;
+}
+
+h5 {
+    margin-top: 0px;
+}
+
+label {
+    width: 80%;
+
+}
+
+.complete {
+    color: gainsboro;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.hide-done .complete {
+    display: none;
+}
+
+.show-completed {
+    font-size: 1rem;
+    color: slategray;
+}
+.show-completed input {
+    transform: scale(1.4);
+}

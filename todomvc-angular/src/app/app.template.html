@@ -1,0 +1,6 @@
+<div><h1>Angular v5.0.2 TodoMVC</h1>
+
+    <TodoList [todos]="todos" [showDone]="showDone"></TodoList>
+    <TodoInput (newTodoEvent)="onNewTodo($event)"></TodoInput>
+    <FilterToggle (onFilterToggleChange)="onFilterToggle($event)"></FilterToggle>
+</div>
