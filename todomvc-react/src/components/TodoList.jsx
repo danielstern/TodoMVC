@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 
 const TodoList = ({todos,showDone,toggleTodoDone})=>(
     <ul>
         {todos
             .filter(todo=>!todo.done || showDone)
             .map((todo,i)=>(
-            <li key={i}>
+            <li key={i} className={classnames({"complete":todo.done})}>
                 {todo.text}
                 <input type="checkbox" onChange={()=>toggleTodoDone(todo)} checked={todo.done}/>
             </li>

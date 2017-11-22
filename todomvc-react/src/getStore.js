@@ -17,6 +17,7 @@ const defaultState = {
         done: false
     }]
 };
+
 const reducer = (state = defaultState,action)=>{
     const { type, todo, showDone } = action;
     if (type === `SUBMIT_TODO`) {
@@ -38,10 +39,7 @@ const reducer = (state = defaultState,action)=>{
             ...state,
             showDone
         }
-        console.info("Updated state...",state);
     };
-
-
 
     return state;
 };
